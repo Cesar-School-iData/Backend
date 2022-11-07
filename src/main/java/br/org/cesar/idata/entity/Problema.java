@@ -5,12 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
-@Getter @Setter
+@Data
 public class Problema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,10 @@ public class Problema {
     private String especialização;
     @Column(nullable = false)
     private String status; // tlavez poderia botar um bool aqui
+
+    @ManyToOne
+    private Ambiente ambiente;
+
 
     public Problema(String categoria, String especialização, String status){
         this.categoria = categoria;
