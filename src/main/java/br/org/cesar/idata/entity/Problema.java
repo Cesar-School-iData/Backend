@@ -18,17 +18,12 @@ public class Problema {
     @Column(nullable = false)
     private String categoria;
     @Column(nullable = false)
-    private String especialização;
+    private String especificacao;
     @Column(nullable = false)
-    private String status; // tlavez poderia botar um bool aqui
+    private int status; // tlavez poderia botar um bool aqui
 
     @ManyToOne
     private Ambiente ambiente;
-
-
-    public Problema(String categoria, String especialização, String status){
-        this.categoria = categoria;
-        this.especialização = especialização;
-        this.status = status;
-    }
+    @ManyToOne
+    private Reportador reportador;
 }

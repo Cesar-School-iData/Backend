@@ -1,32 +1,29 @@
 package br.org.cesar.idata.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
+
+import org.hibernate.annotations.GeneratorType;
 
 import lombok.Data;
 
 @Entity
 @Data
-public class Usuario {
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Usuario implements Serializable{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(nullable = false)
     private String email;
-    @Column(nullable = false)
-    private String senha;
-    @Column(nullable = false)
-    private String funcao; //não entendi o que seria essa função?
-    private String descricao;
 
-    @ManyToMany
-    private List<Problema> problemas;
-    
-    public Usuario(String email, String senha, String funcao, String descricao){
-        this.email = email;
-        this.senha = senha;
-        this.funcao = funcao;
-        this.descricao = descricao;
-    }
 }
