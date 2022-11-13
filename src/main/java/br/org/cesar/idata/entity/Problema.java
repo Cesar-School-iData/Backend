@@ -25,5 +25,5 @@ public class Problema {
     @ManyToOne
     private Ambiente ambiente;
     @ManyToOne
-    private Reportador reportador;
+    private Administrador administrador;
 }
