@@ -3,12 +3,13 @@ package br.org.cesar.idata.entity;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter @Setter
 @PrimaryKeyJoinColumn(name="id")
 public class Reportador extends Usuario{
-    private long problemas_reportados;
+    private String nome;
 
 }
