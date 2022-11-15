@@ -9,7 +9,7 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-@PrimaryKeyJoinColumn(name="id")
+@PrimaryKeyJoinColumn(name="usuario_id")
 public class Administrador extends Usuario{
     @Column(nullable = false)
     private String senha;

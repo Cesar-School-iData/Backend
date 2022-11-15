@@ -8,8 +8,8 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-@PrimaryKeyJoinColumn(name="id")
+@PrimaryKeyJoinColumn(name="usuario_id")
 public class Reportador extends Usuario{
-    private String nome;
+    private long problemas_reportados;
 
 }
